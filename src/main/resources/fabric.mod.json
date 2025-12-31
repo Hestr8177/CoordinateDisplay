@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "hestr8177-coordinate-display",
+	"version": "${version}",
+	"name": "Coordinate Display",
+	"description": "A mod that displays your coordinates in Minecraft and is customizable - especially easy with ModMenu installed.",
+	"authors": [
+		"Hestr8177"
+	],
+	"contact": {
+		"homepage": "https://github.com/Hestr8177/CoordinateDisplay",
+		"sources": "https://github.com/Hestr8177/CoordinateDisplay"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/hestr8177-coordinate-display/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"hestr8177.coordinatedisplay.Hestr8177CoordinateDisplay"
+		],
+		"client": [
+			"hestr8177.coordinatedisplay.Hestr8177CoordinateDisplayClient"
+		],
+		"modmenu": [
+			"hestr8177.coordinatedisplay.CoordinateDisplayModMenu"
+		]
+
+	},
+	"mixins": [
+		"hestr8177-coordinate-display.mixins.json",
+		{
+			"config": "hestr8177-coordinate-display.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

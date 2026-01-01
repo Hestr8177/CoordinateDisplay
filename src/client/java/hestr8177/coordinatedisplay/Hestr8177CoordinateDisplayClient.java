@@ -68,7 +68,7 @@ public class Hestr8177CoordinateDisplayClient implements ClientModInitializer {
 			default -> { char1 = "XYZ:" + " ".repeat(textSpacing); dividerString = " ".repeat(textSpacing) + "/" + " ".repeat(textSpacing); }
 		}
 
-		// Reassign the value of coordinateText to use the different symbols based on the selected style
+		// Reassign the value of coordinateText to use the different symbols based on the selected style.
 		coordinateText = String.format(Locale.ROOT, char1 + "%." + decimals + "f"  + dividerString + char2 + "%." + decimals + "f" + dividerString + char3 + "%." + decimals + "f", x, y, z);
 
 		// Load text color and textShadow

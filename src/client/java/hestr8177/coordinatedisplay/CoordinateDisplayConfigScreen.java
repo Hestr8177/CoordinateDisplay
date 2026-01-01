@@ -33,6 +33,10 @@ public class CoordinateDisplayConfigScreen extends OptionsSubScreen {
         // ===== Definitions of the buttons =====
 
         // Background shadow ON/OFF
+        OptionInstance<Boolean> showCoordinates = OptionInstance.createBoolean(
+                "Show Coordinates", config.showCoordinates,
+                value -> config.showCoordinates = value);
+        // Background shadow ON/OFF
         OptionInstance<Boolean> backgroundShadow = OptionInstance.createBoolean(
                 "Background Shadow", config.showBackground,
                 value -> config.showBackground = value);
@@ -199,6 +203,7 @@ public class CoordinateDisplayConfigScreen extends OptionsSubScreen {
 
 
         // Positions of the buttons in the settings menu
+        this.list.addBig(showCoordinates);                        // Toggles the display ON/OFF
         this.list.addSmall(backgroundShadow, textShadow);         // Background Shadow and Text Shadow
         this.list.addSmall(backgroundAlpha, textAlpha);           // Slider:  Alpha (0–255)
         this.list.addSmall(backgroundRed, textRed);               // Slider: Red (0-255)

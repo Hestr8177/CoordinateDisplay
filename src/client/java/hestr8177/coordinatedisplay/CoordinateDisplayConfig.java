@@ -16,6 +16,9 @@ public class CoordinateDisplayConfig {
 
     // =====SETTINGS=====
 
+    // General settings
+    public boolean showCoordinates = true;
+
     // Text settings
     public int textAlpha = 255;
     public int textRed = 255;
@@ -60,6 +63,9 @@ public class CoordinateDisplayConfig {
         try (FileReader reader = new FileReader(configFile)) {
             CoordinateDisplayConfig loadedConfig = gson.fromJson(reader, CoordinateDisplayConfig.class); // Read JSON into a new object
             if (loadedConfig != null) {
+                // General
+                showCoordinates = loadedConfig.showCoordinates = true;
+
                 // Text
                 textAlpha = loadedConfig.textAlpha;
                 textRed = loadedConfig.textRed;
@@ -102,6 +108,9 @@ public class CoordinateDisplayConfig {
 
     // Reset all fields to default values
     public void loadDefaults() {
+        // General
+        showCoordinates = true;
+
         // Text
         textAlpha = 255;
         textRed = 255;

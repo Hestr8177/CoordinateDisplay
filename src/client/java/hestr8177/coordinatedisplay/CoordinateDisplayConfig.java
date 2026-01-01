@@ -64,7 +64,7 @@ public class CoordinateDisplayConfig {
             CoordinateDisplayConfig loadedConfig = gson.fromJson(reader, CoordinateDisplayConfig.class); // Read JSON into a new object
             if (loadedConfig != null) {
                 // General
-                showCoordinates = loadedConfig.showCoordinates = true;
+                showCoordinates = loadedConfig.showCoordinates;
 
                 // Text
                 textAlpha = loadedConfig.textAlpha;

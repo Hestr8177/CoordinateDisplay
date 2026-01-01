@@ -12,6 +12,8 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 
+import java.util.Locale;
+
 
 public class Hestr8177CoordinateDisplayClient implements ClientModInitializer {
 
@@ -67,7 +69,7 @@ public class Hestr8177CoordinateDisplayClient implements ClientModInitializer {
 		}
 
 		// Reassign the value of coordinateText to use the different symbols based on the selected style
-		coordinateText = String.format(char1 + "%." + decimals + "f"  + dividerString + char2 + "%." + decimals + "f" + dividerString + char3 + "%." + decimals + "f", x, y, z);
+		coordinateText = String.format(Locale.ROOT, char1 + "%." + decimals + "f"  + dividerString + char2 + "%." + decimals + "f" + dividerString + char3 + "%." + decimals + "f", x, y, z);
 
 		// Load text color and textShadow
 		int textColor = ARGB.color(config.textAlpha, config.textRed,config.textGreen,config.textBlue);
